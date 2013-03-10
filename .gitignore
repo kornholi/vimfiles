@@ -1,0 +1,6 @@
+tags
+*~
+*.swp
+undofiles/*
+bundle/*
+!bundle/vundle

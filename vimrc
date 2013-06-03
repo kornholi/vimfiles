@@ -16,6 +16,11 @@ Bundle 'scrooloose/nerdtree'
 
 Bundle 'tpope/vim-markdown'
 
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-easytags'
+
+Bundle 'Valloric/YouCompleteMe'
+
 filetype plugin indent on "required!
 
 set t_Co=256
@@ -104,3 +109,6 @@ let python_highlight_all = 1
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_baselib = 1
+
+let g:ycm_extra_conf_globlist = ['~/.vim/ycm_extra_conf.py']
+let g:ycm_autoclose_preview_window_after_insertion = 1

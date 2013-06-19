@@ -9,7 +9,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'vim-scripts/a.vim'
-Bundle 'vim-scripts/bufexplorer.zip'
+
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+
+" Better fuzzy finder
+Bundle 'kien/ctrlp.vim'
 
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
@@ -18,23 +23,51 @@ Bundle 'tpope/vim-markdown'
 
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-session'
 
 Bundle 'Valloric/YouCompleteMe'
 
-filetype plugin indent on "required!
+" enabled detection, plugins, and indenting
+filetype plugin indent on
 
-set t_Co=256
-colorscheme Tomorrow-Night
-highlight Folded ctermbg=238
-syntax on
+
+if &t_Co > 2 || has("gui_running")
+    colorscheme Tomorrow-Night
+    highlight Folded ctermbg=238
+    syntax on
+endif
+
+if has("gui_running")
+    set guifont=Terminus\ 9
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=L
+endif
+
+set scrolloff=3     " keep cursor 3 lines from screen border
+set showmatch       " show matching bracket
+set matchtime=2     " for 200ms
+set showmode
+set showcmd
+set ruler           " cursor position in status bar
+set title           
+set number          " line numbers
+set cursorline      " highlights current line
+
+set mouse=a
+set ttymouse=xterm2
 
 set visualbell
 set noerrorbells
 
-set shiftwidth=4
+set tabstop=4
 set softtabstop=4
-set expandtab
-set autoindent
+set shiftwidth=4    " spaces for autoindents 
+set expandtab       " turn tabs into spaces
+set autoindent      " match ident of previous line
+set copyindent      " copy previous indent
+set cindent         " indent for c-like code
+set smarttab
 
 set foldmethod=indent
 set foldnestmax=3
@@ -42,44 +75,28 @@ set nofoldenable
 
 set backspace=indent,eol,start
 
+set hidden " let buffers to be hidden with unsaved changes
+
 set history=1000
-
-set showcmd
-set showmode
-
-set showmatch
-
-set number	" line numbers
-set ruler
-
+set nobackup " no backup~ files
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
+set ignorecase
 set smartcase
-set incsearch
-set hlsearch
-
-set scrolloff=4
-"set sidescrolloff=7
-"set sidescroll=1
+set incsearch       " incremental search
+set hlsearch        " highlight search results
 
 if v:version >= 703
 	set undodir=~/.vim/undofiles
 	set undofile
-
+	set undolevels=1000
 "	set colorcolumn=+1
 endif
 
-set nobackup
 
-set title
-set mouse=a
-set ttymouse=xterm2
-
-set hidden
-
-set laststatus=2
+set laststatus=2 " always show status line
 "set statusline=%n\ %F\ %mr%r\%=%c-%l/%L
 
 "change mapleader from \ to ,
@@ -88,10 +105,18 @@ let g:mapleader=","
 "nnoremap ; :nohlsearch<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
-nnoremap <silent> <F1> :BufExplorer<CR>
+let g:ctrlp_map = '<leader>e'
+noremap <leader>m :CtrlPMRUFiles<CR>
+
+nnoremap <F1> <nop>
 "nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
-set pastetoggle=<F5>
+"nnoremap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
+nnoremap <F2> :NERDTreeToggle<cr>
+nnoremap <F3> :NERDTreeFind<cr>
+
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+set pastetoggle=<F7>
 
 "nerdtree
 let g:NERDTreeMouseMode = 2
@@ -102,13 +127,35 @@ let g:NERDTreeWinSize = 40
 
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+
 "python highlighting extras
 let python_highlight_all = 1
 
-"PHP highlighting extras
+" PHP highlighting extras
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_baselib = 1
 
-let g:ycm_extra_conf_globlist = ['~/.vim/ycm_extra_conf.py']
+" ycm
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" session
+let g:session_autoload = 'yes'
+let g:session_autosave = 'yes'
+let g:session_default_to_laste = 'yes'
+
+" easytags
+let g:easytags_always_enabled = 1
+let g:easytags_file = './tags'
+let g:easytags_dynamic_files = 1
+let g:easytags_auto_highligth = 1
+let g:easytags_update_min = 5000
+
+" fuzzyfinder
+"let g:fuf_modesDisable = []
+"let g:fuf_mrufile_maxItem = 1000
+"let g:fuf_mrucmd_maxItem = 400
+"let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|class|meta|lock|orig|jar|swp)$|/test/data\.|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+
+let g:ctrlp_match_window_bottom = 0

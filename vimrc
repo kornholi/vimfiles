@@ -34,8 +34,9 @@ Bundle 'xolox/vim-session'
 
 Bundle 'Valloric/YouCompleteMe'
 
+Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'skammer/vim-css-color'
+Bundle 'ap/vim-css-color'
 Bundle 'elzr/vim-json'
 Bundle 'othree/html5.vim'
 

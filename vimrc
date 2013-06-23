@@ -3,6 +3,12 @@ set nocompatible
 
 filetype off "required!
 
+if !isdirectory(expand("~/.vim/bundle/vundle"))
+   !mkdir -p ~/.vim/bundle
+   !git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+   let s:bootstrap=1
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -20,6 +26,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-fugitive'
 
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
@@ -27,6 +34,16 @@ Bundle 'xolox/vim-session'
 
 Bundle 'Valloric/YouCompleteMe'
 
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'skammer/vim-css-color'
+Bundle 'elzr/vim-json'
+Bundle 'othree/html5.vim'
+
+if exists("s:bootstrap") && s:bootstrap
+    unlet s:bootstrap
+    BundleInstall
+endif
+            
 " enabled detection, plugins, and indenting
 filetype plugin indent on
 
@@ -92,24 +109,19 @@ if v:version >= 703
 	set undodir=~/.vim/undofiles
 	set undofile
 	set undolevels=1000
-"	set colorcolumn=+1
 endif
 
-
 set laststatus=2 " always show status line
-"set statusline=%n\ %F\ %mr%r\%=%c-%l/%L
 
 "change mapleader from \ to ,
 let g:mapleader=","
 
-"nnoremap ; :nohlsearch<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 let g:ctrlp_map = '<leader>e'
 noremap <leader>m :CtrlPMRUFiles<CR>
 
 nnoremap <F1> <nop>
-"nnoremap <F2> :NERDTreeToggle<CR>
 "nnoremap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :NERDTreeFind<cr>

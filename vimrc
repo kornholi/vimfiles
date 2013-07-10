@@ -29,8 +29,10 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
+"Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-session'
+
+Bundle 'majutsushi/tagbar'
 
 Bundle 'Valloric/YouCompleteMe'
 
@@ -96,7 +98,9 @@ set backspace=indent,eol,start
 set hidden " let buffers to be hidden with unsaved changes
 
 set history=1000
-set nobackup " no backup~ files
+"set nobackup " no backup~ files
+set backupdir=~/.vim/backup/
+set directory=~/.vim/backup
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
@@ -127,7 +131,9 @@ nnoremap <F1> <nop>
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :NERDTreeFind<cr>
 
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>pg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>pc :YcmCompleter GToDeclaration<CR>
 
 set pastetoggle=<F7>
 
@@ -149,6 +155,9 @@ let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_baselib = 1
 
+" syntastic
+let g:syntastic_python_checkers=['pyflakes']
+
 " ycm
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -159,11 +168,15 @@ let g:session_autosave = 'yes'
 let g:session_default_to_laste = 'yes'
 
 " easytags
-let g:easytags_always_enabled = 1
-let g:easytags_file = './tags'
-let g:easytags_dynamic_files = 1
-let g:easytags_auto_highligth = 1
-let g:easytags_update_min = 5000
+set tags=./tags;
+"let g:easytags_dynamic_files = 1
+"let g:easytags_updatetime_autodisable = 1
+
+" tagbar
+let g:tagbar_left = 1
+let g:tagbar_sort = 0
+
+nnoremap <F4> :TagbarToggle<cr><c-w>=
 
 " fuzzyfinder
 "let g:fuf_modesDisable = []

@@ -42,6 +42,8 @@ Bundle 'ap/vim-css-color'
 Bundle 'elzr/vim-json'
 Bundle 'othree/html5.vim'
 
+Bundle 'rking/ag.vim'
+
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
     BundleInstall
@@ -99,8 +101,8 @@ set hidden " let buffers to be hidden with unsaved changes
 
 set history=1000
 "set nobackup " no backup~ files
-set backupdir=~/.vim/backup/
-set directory=~/.vim/backup
+set backupdir=~/.vim/backups/
+set directory=~/.vim/backups/
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
@@ -185,3 +187,5 @@ nnoremap <F4> :TagbarToggle<cr><c-w>=
 "let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|class|meta|lock|orig|jar|swp)$|/test/data\.|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 
 let g:ctrlp_match_window_bottom = 0
+
+let g:agprg="ag --column -S"

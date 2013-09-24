@@ -24,12 +24,13 @@ Bundle 'kien/ctrlp.vim'
 
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 
 Bundle 'xolox/vim-misc'
-"Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-session'
 
 Bundle 'majutsushi/tagbar'
@@ -52,7 +53,6 @@ endif
 " enabled detection, plugins, and indenting
 filetype plugin indent on
 
-
 if &t_Co > 2 || has("gui_running")
     colorscheme Tomorrow-Night
     highlight Folded ctermbg=238
@@ -65,6 +65,12 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=L
 endif
+
+if has("macunix")
+    set guifont=Meslo\ LG\ M\ For\ Powerline
+    set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+endif
+
 
 set scrolloff=3     " keep cursor 3 lines from screen border
 set showmatch       " show matching bracket

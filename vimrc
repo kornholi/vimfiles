@@ -30,7 +30,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
+"Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-session'
 
 Bundle 'majutsushi/tagbar'
@@ -70,7 +70,6 @@ if has("macunix")
     set guifont=Meslo\ LG\ M\ For\ Powerline
     set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
 endif
-
 
 set scrolloff=3     " keep cursor 3 lines from screen border
 set showmatch       " show matching bracket
@@ -126,7 +125,7 @@ endif
 
 set laststatus=2 " always show status line
 
-"change mapleader from \ to ,
+"change leader from \ to ,
 let g:mapleader=","
 
 nnoremap <silent> <leader>/ :nohlsearch<CR>

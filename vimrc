@@ -35,7 +35,9 @@ Bundle 'xolox/vim-session'
 
 Bundle 'majutsushi/tagbar'
 
-Bundle 'Valloric/YouCompleteMe'
+if v:version > 703 || (v:version == 703 && has('patch584'))
+    Bundle 'Valloric/YouCompleteMe'
+endif
 
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'

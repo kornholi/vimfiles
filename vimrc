@@ -38,6 +38,7 @@ Bundle 'majutsushi/tagbar'
 if v:version > 703 || (v:version == 703 && has('patch584'))
     Bundle 'Valloric/YouCompleteMe'
 endif
+Bundle 'Blackrush/vim-gocode'
 
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'

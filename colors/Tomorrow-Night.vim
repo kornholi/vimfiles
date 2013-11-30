@@ -368,6 +368,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("goDirective", s:purple, "", "")
 	call <SID>X("goDeclaration", s:purple, "", "")
 	call <SID>X("goStatement", s:purple, "", "")
+	call <SID>X("goRepeat", s:purple, "", "")
 	call <SID>X("goConditional", s:purple, "", "")
 	call <SID>X("goConstants", s:orange, "", "")
 	call <SID>X("goTodo", s:yellow, "", "")

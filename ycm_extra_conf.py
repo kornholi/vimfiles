@@ -8,7 +8,7 @@ flags = [
 '-Wall',
 '-Wextra',
 '-Werror',
-'-Wc++98-compat',
+#'-Wc++98-compat',
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
@@ -28,6 +28,8 @@ flags = [
 'c++',
 '-I',
 '.',
+'-isystem',
+'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/c++/v1'
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the

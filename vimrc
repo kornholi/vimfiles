@@ -25,6 +25,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'SirVer/ultisnips'
+Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
@@ -38,15 +40,18 @@ Bundle 'majutsushi/tagbar'
 if v:version > 703 || (v:version == 703 && has('patch584'))
     Bundle 'Valloric/YouCompleteMe'
 endif
-Bundle 'Blackrush/vim-gocode'
+
+"Bundle 'Blackrush/vim-gocode'
+Bundle 'fatih/vim-go'
 
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'ap/vim-css-color'
 Bundle 'elzr/vim-json'
 Bundle 'othree/html5.vim'
-
+Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'rking/ag.vim'
+Bundle 'junegunn/seoul256.vim'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
@@ -197,3 +202,6 @@ nnoremap <F4> :TagbarToggle<cr><c-w>=
 let g:ctrlp_match_window_bottom = 0
 
 let g:agprg="ag --column -S"
+
+"
+au BufRead,BufNewFile *.asm set filetype=nasm

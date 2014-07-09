@@ -43,6 +43,7 @@ endif
 
 "Bundle 'Blackrush/vim-gocode'
 Bundle 'fatih/vim-go'
+Bundle 'wting/rust.vim'
 
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'
@@ -205,3 +206,10 @@ let g:agprg="ag --column -S"
 
 "
 au BufRead,BufNewFile *.asm set filetype=nasm
+
+"This allows for change paste motion cp{motion}
+nmap <silent> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+    silent exe "normal! `[v`]\"_c"
+    silent exe "normal! p"
+endfunction

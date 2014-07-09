@@ -148,7 +148,7 @@ nnoremap <F3> :NERDTreeFind<cr>
 
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>pg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>pc :YcmCompleter GToDeclaration<CR>
+nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 
 set pastetoggle=<F7>
 

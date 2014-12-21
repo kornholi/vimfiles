@@ -275,6 +275,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Todo", s:comment, s:background, "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
+	call <SID>X("Keyword", s:purple, "", "")
 	call <SID>X("Statement", s:foreground, "", "")
 	call <SID>X("Conditional", s:foreground, "", "")
 	call <SID>X("Repeat", s:foreground, "", "")
@@ -296,6 +297,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
+	call <SID>X("cStatement", s:purple, "", "")
 	call <SID>X("cStorageClass", s:purple, "", "")
 	call <SID>X("cConditional", s:purple, "", "")
 	call <SID>X("cRepeat", s:purple, "", "")
@@ -452,6 +454,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("scalaXml", s:green, "", "")
 	call <SID>X("scalaConstructorSpecializer", s:yellow, "", "")
 	call <SID>X("scalaBackTick", s:blue, "", "")
+
+    " Rust
+	call <SID>X("rustConditional", s:purple, "", "")
 
 	" Delete Functions
 	delf <SID>X

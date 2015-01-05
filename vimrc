@@ -27,6 +27,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'SirVer/ultisnips'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-scripts/YankRing.vim'
 
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
@@ -44,6 +45,7 @@ endif
 "Bundle 'Blackrush/vim-gocode'
 Bundle 'fatih/vim-go'
 Bundle 'wting/rust.vim'
+Bundle 'cespare/vim-toml'
 
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'
@@ -150,6 +152,9 @@ nnoremap <F3> :NERDTreeFind<cr>
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>pg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
+
+noremap <silent> <C-S> :update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
 
 set pastetoggle=<F7>
 

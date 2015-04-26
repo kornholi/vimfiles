@@ -277,7 +277,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Identifier", s:red, "", "none")
 	call <SID>X("Keyword", s:purple, "", "")
 	call <SID>X("Statement", s:foreground, "", "")
-	call <SID>X("Conditional", s:foreground, "", "")
+	call <SID>X("Conditional", s:purple, "", "")
 	call <SID>X("Repeat", s:foreground, "", "")
 	call <SID>X("Structure", s:purple, "", "")
 	call <SID>X("Function", s:blue, "", "")
@@ -457,6 +457,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " Rust
 	call <SID>X("rustConditional", s:purple, "", "")
+
+    " C++ (color_coded)
+    call <SID>X("Member", s:aqua, "", "")
+    call <SID>X("Variable", s:foreground, "", "")
+    call <SID>X("Namespace", s:orange, "", "")
 
 	" Delete Functions
 	delf <SID>X

@@ -27,7 +27,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'SirVer/ultisnips'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'vim-scripts/YankRing.vim'
+
+"laggy
+"Bundle 'vim-scripts/YankRing.vim'
 
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
@@ -42,10 +44,14 @@ if v:version > 703 || (v:version == 703 && has('patch584'))
     Bundle 'Valloric/YouCompleteMe'
 endif
 
+Bundle 'jeaye/color_coded'
+
 "Bundle 'Blackrush/vim-gocode'
 Bundle 'fatih/vim-go'
 Bundle 'wting/rust.vim'
 Bundle 'cespare/vim-toml'
+Bundle 'wlangstroth/vim-racket'
+Bundle 'nachumk/systemverilog.vim'
 
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'

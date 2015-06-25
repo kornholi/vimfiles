@@ -48,7 +48,7 @@ Bundle 'jeaye/color_coded'
 
 "Bundle 'Blackrush/vim-gocode'
 Bundle 'fatih/vim-go'
-Bundle 'wting/rust.vim'
+Bundle 'rust-lang/rust.vim'
 Bundle 'cespare/vim-toml'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'nachumk/systemverilog.vim'

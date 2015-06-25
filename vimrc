@@ -52,6 +52,7 @@ Bundle 'rust-lang/rust.vim'
 Bundle 'cespare/vim-toml'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'nachumk/systemverilog.vim'
+Bundle 'tikhomirov/vim-glsl'
 
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'

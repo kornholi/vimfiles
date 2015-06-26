@@ -54,6 +54,9 @@ Bundle 'wlangstroth/vim-racket'
 Bundle 'nachumk/systemverilog.vim'
 Bundle 'tikhomirov/vim-glsl'
 
+" Racket/scheme
+Bundle 'wlangstroth/vim-racket'
+
 Bundle 'StanAngeloff/php.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'ap/vim-css-color'
@@ -168,6 +171,7 @@ set pastetoggle=<F7>
 "nerdtree
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
+let NERDTreeIgnore = ['\.pyc$']
 
 "moved to after/plugin/nerdtree.vim
 "call g:NERDTreeKeyMap.Remove('<MiddleRelease>', 'all')

@@ -42,9 +42,12 @@ Bundle 'majutsushi/tagbar'
 
 if v:version > 703 || (v:version == 703 && has('patch584'))
     Bundle 'Valloric/YouCompleteMe'
+    Bundle 'jeaye/color_coded'
+    Bundle 'rdnetto/YCM-Generator'
+
+    let g:ycm_rust_src_path = '/home/kornholi/dev/rust/src'
 endif
 
-Bundle 'jeaye/color_coded'
 
 "Bundle 'Blackrush/vim-gocode'
 Bundle 'fatih/vim-go'
@@ -62,6 +65,8 @@ Bundle 'othree/html5.vim'
 Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'rking/ag.vim'
 Bundle 'junegunn/seoul256.vim'
+
+Bundle 'editorconfig/editorconfig-vim'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
@@ -215,7 +220,7 @@ nnoremap <F4> :TagbarToggle<cr><c-w>=
 
 let g:ctrlp_match_window_bottom = 0
 
-let g:agprg="ag --column -S"
+let g:ag_prg="ag -S --vimgrep"
 
 "
 au BufRead,BufNewFile *.asm set filetype=nasm
